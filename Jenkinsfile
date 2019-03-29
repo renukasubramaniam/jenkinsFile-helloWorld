@@ -17,7 +17,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh "mvn deploy -DskipTests"
+                sh "mvn deploy -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}}"
             }
         }
     }
