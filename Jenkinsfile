@@ -18,7 +18,7 @@ pipeline {
         stage('deploy') {
             steps {
                 configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
-                    sh "mvn deploy  -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
+                    sh "mvn -s $SETTINGS  -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
                 }
 
             }
