@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    tools {
-        jdk 'jdk8'
-        maven 'maven3'
-    }
+//    tools {
+//        jdk 'jdk8'
+//        maven 'maven3'
+//    }
     stages {
         stage('Install') {
             steps {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh "mvn deploy -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}}"
+                sh "mvn deploy -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
             }
         }
     }
