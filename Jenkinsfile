@@ -25,10 +25,9 @@ pipeline {
 //        }
         stage('Executing Ansible Playbooks') {
             steps {
-                ansiblePlaybook('src/main/scripts/playbook.yml') {
-                    inventoryPath('src/main/scripts/inventory.ini')
-                }
-
+                ansiblePlaybook(
+                        playbook: 'src/main/scripts/playbook.yml',
+                        inventory: 'src/main/scripts/inventory.ini')
             }
         }
     }
