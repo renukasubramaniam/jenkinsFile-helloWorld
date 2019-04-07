@@ -15,10 +15,18 @@ pipeline {
                 }
             }
         }
-        stage('deploy') {
+//        stage('Deploy to Nexus') {
+//            steps {
+//                configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
+//                    sh "mvn -s $SETTINGS deploy  -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
+//                }
+//
+//            }
+//        }
+        stage('Executing Ansible Playbooks') {
             steps {
-                configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
-                    sh "mvn -s $SETTINGS deploy  -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
+                ansiblePlaybook('src/main/scripts/playbook.yml') {
+                    inventoryPath('src/main/scripts/inventory.ini')
                 }
 
             }
