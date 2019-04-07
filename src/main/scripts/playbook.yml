@@ -1,20 +1,20 @@
-  --
-  - hosts: webservers
-    gather_facts: yes
-    become: true
-    become_method: sudo
+---
+- hosts: webservers
+  gather_facts: yes
+  become: true
+  become_method: sudo
 
-    tasks:
-      - name: Setting up setup-tools
-        apt: pkg=python-setuptools state=present
-      - name: Setting up pip
-        apt: pkg=python-pip state=present
-      - name: Installing lxml python library using Ansible pip module
-        pip:
-          name: lxml
-      - name: Copying Maven Artifact
-        maven_artifact:
-          group_id: junit
-          artifact_id: junit
-          version: 4.11
-          dest: /home/ubuntu/junit-4.11.jar
+  tasks:
+    - name: Setting up setup-tools
+      apt: pkg=python-setuptools state=present
+    - name: Setting up pip
+      apt: pkg=python-pip state=present
+    - name: Installing lxml python library using Ansible pip module
+      pip:
+        name: lxml
+    - name: Copying Maven Artifact
+      maven_artifact:
+        group_id: junit
+        artifact_id: junit
+        version: 4.11
+        dest: /home/ubuntu/junit-4.11.jar
