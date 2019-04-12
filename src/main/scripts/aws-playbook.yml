@@ -1,0 +1,25 @@
+# https://stackoverflow.com/questions/47563848/ansible-get-tag-name-and-set-hostname-over-multiple-hosts
+# https://docs.ansible.com/ansible/latest/modules/ec2_remote_facts_module.html
+
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - ec2_remote_facts:
+        region: us-east-1
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        filters:
+          "tag:Name": "{{ name }}"
+        register: instance_facts
+    - add_host:
+        name: "{{ item.tags.Name }}"
+        ansible_host: "{{ item.private_ip_address }}"
+        group: dev
+      with_items: "{{ instance_facts.instances }}"
+
+- hosts: dev
+  gather_facts: true
+  tasks:
+    - name: Print Instances
+      debug: "msg=Instances: '{{ instance_facts.instances }}'"
