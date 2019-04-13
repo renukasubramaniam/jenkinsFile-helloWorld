@@ -25,6 +25,7 @@ $ ansible-playbook springboot-playbook.yml -i inventory.ini -u ubuntu
 * [Step by step ansible guide](https://blog.ssdnodes.com/blog/step-by-step-ansible-guide/)
 * [Spring boot deployment docs](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)
 * [CI-CD with jenkins and ansible](https://itnext.io/ci-cd-with-jenkins-and-ansible-f41ef2b33977)
+* [integrating-ansible-jenkins-cicd-process](https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process)
 * [Ansible spring-boot remyma role](https://github.com/remyma/ansible-springboot)
 * [Ansible Maven_artifact module](https://docs.ansible.com/ansible/latest/modules/maven_artifact_module.html)
 * [ec2_instance_facts](https://docs.ansible.com/ansible/2.4/ec2_instance_facts_module.html)
