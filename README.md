@@ -31,3 +31,5 @@ $ ansible-playbook springboot-playbook.yml -i inventory.ini -u ubuntu
 * [ec2_instance_facts](https://docs.ansible.com/ansible/2.4/ec2_instance_facts_module.html)
 * [Generating ssh keys](https://www.ssh.com/ssh/keygen/)
 * [Disable sudo password](https://askubuntu.com/questions/147241/execute-sudo-without-password)
+* [Jacoco - hello-world](https://mkyong.com/maven/maven-jacoco-code-coverage-example/)
+* [Jacoco - Jenkins plugin](https://dzone.com/articles/jacoco-jenkins-plugin)
