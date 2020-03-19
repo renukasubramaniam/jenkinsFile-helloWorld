@@ -35,6 +35,9 @@ pipeline {
 
             }
         }
+
+        //TODO: docker build,push
+        //TODO: deploy docker image
 //        stage('Executing Ansible Playbooks') {
 //            steps {
 //                ansiblePlaybook(
