@@ -6,8 +6,8 @@ def descriptor = new JDK.DescriptorImpl();
 
 def List<JDK> installations = []
 
-javaTools=[['name':'jdk13', 'url':'file:/var/jenkins_home/downloads/openjdk-13.0.2_linux-x64_bin.tar.gz', 'subdir':'jdk-13.0.2']]
-//      ['name':'jdk7', 'url':'file:/var/jenkins_home/downloads/jdk-7u76-linux-x64.tar.gz', 'subdir':'jdk1.7.0_76']]
+javaTools=[['name':'jdk13', 'url':'file:/var/jenkins_home/downloads/openjdk-13.0.2_linux-x64_bin.tar.gz', 'subdir':'jdk-13.0.2'],
+      ['name':'jdk9', 'url':'file:/var/jenkins_home/downloads/openjdk-9_linux-x64_bin.tar.gz', 'subdir':'jdk-9']]
 
 javaTools.each { javaTool ->
     println("Setting up tool: ${javaTool.name}")
