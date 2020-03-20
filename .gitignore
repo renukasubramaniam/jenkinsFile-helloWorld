@@ -30,3 +30,6 @@ HELP.md
 
 ## Docker Secrets ##
 /secrets/
+
+## logs ##
+*.log
