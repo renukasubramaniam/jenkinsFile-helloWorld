@@ -1,4 +1,4 @@
-version: "2.2"
+version: "3.1"
 services:
   jenkins:
     build:
@@ -20,8 +20,8 @@ services:
      - NEXUS_SNAPSHOTS_URL=http://nexus:8081/repository/maven-snapshots/
 #    cpus: '0.50'
 #    mem_limit: '256M'
-#    secrets:
-#     - artifactoryPassword
+    secrets:
+     - nexusPassword
   nexus:
     image: sonatype/nexus3
     container_name: nexus
@@ -31,6 +31,6 @@ services:
      - "./nexus-data:/nexus-data"
 #    cpus: '0.50'
 #    mem_limit: '256M'
-#secrets:
-# artifactoryPassword:
-#  file: ./secrets/artifactoryPassword
+secrets:
+ nexusPassword:
+  file: ./secrets/nexusPassword
