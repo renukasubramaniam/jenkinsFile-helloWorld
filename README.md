@@ -1,13 +1,24 @@
 # Spring Boot CI\CD
 
-This is "Hello World" template for automating the build & deployment process of Spring boot 2 application using: Maven, Jenkins and Ansible.
+This is "Hello World" template for automating the build & deployment process of Spring boot 2 application.
+Jenkins jobs log files are streamed and persisted.
+
+Technologies being used:
+* Maven
+* Jenkins ( using pipeline plugin )
+* Ansible
+* Spring Boot 2
+* Filebeat
+* ELK
+* Docker & Docker-compose
+* Nexus
 
 ## Usage
 ### Running Jenknis on Docker
 ```bash
-$ cd src/main/docker/jenkins
+$ cd src/main/docker/
 # build the containers and fire them up
-$ docker-compose up --build -d
+$ ./run_services.sh
 ```
 ### Executing ansible playbooks
 * Make sure you you have a proper ssh connection to your target hosts listed in `inventory.ini` and you disabled sudo password.
