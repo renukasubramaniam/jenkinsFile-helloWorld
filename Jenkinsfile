@@ -1,9 +1,9 @@
 pipeline {
     agent any
-#    tools {
-#        jdk 'jdk13'
-#        maven 'maven3'
-#    }
+//    tools {
+//        jdk 'jdk13'
+//        maven 'maven3'
+//    }
     stages {
         stage('Clone sources') {
             steps {
